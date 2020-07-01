@@ -1,0 +1,23 @@
+{% load static %}
+  <!-- Footer -->
+ <footer class="py-5 bg-dark">
+    <div class="container">
+		<p class="m-0 text-center text-white">Her Hakkı Saklıdır &copy; MuhsasebeBilimi 2020</p>
+			</br>
+		<p class="m-0 text-center text-white"><a href="{% url 'kaynaklar' %}">Kaynaklar</a> | <a href="{% url 'uyarı' %}">Uyarı</a> |<a href="{% url 'about' %}"> Hakkımızda</a></p>
+			</br>
+			<!--Grid column-->
+		<p class="float-right">
+			<a href="#" onclick="goBack()">Geri Dön</a>
+			<a href="#">Başa Dön</a>
+		</p>
+	</div>
+    <!-- /.container -->
+ </footer>
+  <!-- Bootstrap core JavaScript -->
+	<script type="text/javascript" src="{% static '/jquery/jquery.min.js' %}"></script>
+	<script type="text/javascript" src="{% static '/js/bootstrap/bootstrap.bundle.min.js' %}"></script>
+	<script type="text/javascript" src="{% static '/js/js.js' %}"></script>	 <!--kendi yazdığım js-->	 	
+	<script type="text/javascript" src="{% static '/js/page.js' %}"></script> <!--share button için js-->		
+</body>
+</html>
