@@ -1,0 +1,52 @@
+{% load static %}
+{%	block content %}
+<!-- Sidebar Widgets Column -->
+      <div class="col-md-4">
+        <!-- Search Widget -->
+        <div class="card my-4">
+          <h5 class="card-header">Muhasebe Bilgisi Bul</h5>
+          <div class="card-body">
+		  <form action="{% url 'search_results' %}" method="GET" role="search">
+            <div class="input-group">
+				<input type="text" name="q" class="form-control" value='{{ request.GET.q }}' type="submit">
+				 <span class="input-group-btn">
+					<button class="btn btn-secondary" type="submit">Ara!</button>
+				</span>
+            </div>
+			</form>
+          </div>
+        </div>
+        <!-- Categories Widget -->
+        <div class="card my-4">
+          <h5 class="card-header">Muhasebe Bilgi Kategorileri</h5>
+          <div class="card-body">
+            <div class="row">
+            
+                <ul class="list-unstyled mb-0">
+                  {% block sidebar %}
+                    <li>           
+                    {% for c in categories %}
+                    <a href="{% url 'set_cat' c.name %}">{{ c.name }}</a>
+                    <br>
+                    {% empty %}
+                      <p>No categories yet..</p>
+                    {% endfor %} 
+                    </li>
+                  {% endblock %}
+                </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Side Widget -->
+        <div class="card my-4">
+          <h5 class="card-header">Muhasebe Bilgi Etiketleri</h5>
+          <div class="card-body">      
+            {% for tag in tags %}
+            <a class="btn btn-default btn-lg tag-btn" href="{% url 'tagged' tag.slug %}">{{ tag.name }}</a>
+            {% empty %}
+            <h3>No Tags<h3>
+          {% endfor %}                    
+          </div>
+        </div>
+      </div>
+{%	endblock content %}

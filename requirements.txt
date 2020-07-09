@@ -1,0 +1,12 @@
+django==2.2.13
+Pillow
+django-ckeditor==5.7.1
+django-cleanup==2.1.0
+django-crispy-forms==1.7.2
+django-js-asset==1.0.0
+django-taggit
+django-mptt
+django-widget-tweaks==1.4.3
+whitenoise==4.0
+
+

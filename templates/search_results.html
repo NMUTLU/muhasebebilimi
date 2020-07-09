@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="col-md-8">
+	{% for blog in object_list %}
+	<div class="media">
+		{% if blog.altkonu_image %}
+		<a href="{{ blog.get_absolute_url }}">
+			<img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="{{ blog.altkonu_image.url }}"
+				title="{{blog.konu}}" alt="{{blog.konu}} resmi">
+		</a>
+		{% endif %}
+		<div class="media-body">
+			<h3 class="title mb-1"><a href="{{ blog.get_absolute_url }}">{{ blog.konu }}</a></h3>
+			<div class="meta mb-1"><span class="date">{{ blog.yainlanma_tarihi.date }}</span></div>
+			<div class="intro">{{ blog.alt_konu }}</div>
+			<a class="more-link" href="{{ blog.get_absolute_url }}">Oku &rarr;</a>
+		</div>
+		<!--//media-body-->
+	</div>
+	<!--//media-->
+	{% endfor %}
+	<!-- Pagination -->
+	<ul class="pagination justify-content-center mb-4">
+		{% if is_paginated %}
+		{% if page_obj.has_previous %}
+		<li class="page-item">
+			<a class="page-link"
+				href="?page={{ page_obj.previous_page_number }}{% if request.GET.q %} &q={{ request.GET.q }}{% endif %}">&larr;
+				Önceki</a>
+		</li>
+		{% endif %}
+		{% if page_obj.has_next %}
+		<li class="page-item">
+			<a class="page-link"
+				href="?page={{ page_obj.next_page_number }}{% if request.GET.q %} &q={{ request.GET.q }}{% endif %}">Sonraki
+				&rarr;</a>
+		</li>
+		{% endif %}
+		{% endif %}
+	</ul>
+</div>
+{% endblock content %}

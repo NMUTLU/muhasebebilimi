@@ -1,0 +1,17 @@
+{% include 'header.html' %}
+{% load static %}
+<!-- Page Content --> 
+<div class="container">
+	<div class="row">
+            {% block content %}
+
+
+
+            
+            {% endblock content %}
+ {% include 'widget.html' %}	
+    </div>	
+   <!-- /.row -->
+</div>	
+<!-- /.container -->       
+{% include 'footer.html' %}

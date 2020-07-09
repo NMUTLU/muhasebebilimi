@@ -1,0 +1,14 @@
+/*!  */
+/*!üstten boşluk ayarlama  */
+body {
+  padding-top: 56px;
+}
+/*nav bar çizgi ve opacity*/
+.navbar{
+  opacity: 1.0;
+  border-bottom: 1px solid #fff;
+}
+/*header etiketi resim büyüklüğü*/
+.masthead{
+  padding-top: 70px;
+}
