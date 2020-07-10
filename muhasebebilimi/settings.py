@@ -53,7 +53,12 @@ INSTALLED_APPS = [
     ## BEGİN Sitemap
     'django.contrib.sitemaps',
     ## END Sitemap
+<<<<<<< HEAD
 
+=======
+    #image optimisazyonu yeniden boyut
+    'imagekit',
+>>>>>>> b66558ea37ed9c66bab50d97cba846e6793daaa9
 
 ]
 MIDDLEWARE = [

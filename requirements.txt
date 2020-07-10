@@ -7,6 +7,11 @@ django-js-asset==1.0.0
 django-taggit
 django-mptt
 django-widget-tweaks==1.4.3
+<<<<<<< HEAD
 whitenoise==4.0
 
+=======
+whitenoise
+django-imagekit
+>>>>>>> b66558ea37ed9c66bab50d97cba846e6793daaa9
 

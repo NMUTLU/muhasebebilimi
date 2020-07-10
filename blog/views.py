@@ -71,6 +71,7 @@ class SearchResultsView(TagMixin, ListView):
 
     def get_queryset(self):
         query = self.request.GET.get('q')
+<<<<<<< HEAD
         if query:
             object_list = Blog.objects.filter(
                 Q(konu__icontains=query) |
@@ -80,6 +81,12 @@ class SearchResultsView(TagMixin, ListView):
             )
         else:
             object_list = self.model.objects.none()
+=======
+        object_list = Blog.objects.filter(
+            Q(konu__icontains=query) |
+            Q(metin__icontains=query)
+        )
+>>>>>>> b66558ea37ed9c66bab50d97cba846e6793daaa9
         return object_list
 
 # taggit
